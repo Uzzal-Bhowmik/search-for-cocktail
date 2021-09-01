@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Your Favourite Cocktail</title>
+    <!-- tailwind css stylesheet  -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <!-- custom styles  -->
+    <style>
+        #search-box-empty,
+        #nothing-found {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="grid grid-cols-1 my-16 w-11/12 mx-auto text-center gap-8">
+
+        <!-- Search Bar and button -->
+        <div>
+            <h1 class="text-blue-500 text-3xl">Search Your Favourite Cocktail</h1>
+
+            <!-- search bar  -->
+            <div class="flex items-center border-2 border-purple-300 w-3/5 rounded-full mt-6 mx-auto shadow-lg"
+                x-data="{ search: '' }">
+                <div class="w-full">
+                    <input id="search-bar" type="search" class="px-4 py-1 w-full rounded-full focus:outline-none"
+                        placeholder="Search Here..." x-model="search">
+                </div>
+                <div>
+                    <button id="search-btn" type="submit"
+                        class="w-12 h-12 rounded-full flex justify-center items-center bg-purple-400 text-white"
+                        :disabled="search.length == 0">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- single card details loader/spinner  -->
+        <div id="single-card-loader" class="mx-auto">
+
+        </div>
+
+
+        <!-- single card details  -->
+        <div id="single-card-details">
+
+        </div>
+
+        <hr>
+
+        <!-- search results  -->
+        <div id="cocktail-cards-container" class="grid grid-cols-3 gap-8">
+
+            <!-- cocktail cards -->
+
+        </div>
+    </section>
+
+    <!-- error container  -->
+    <div>
+        <h1 id="search-box-empty" class="text-3xl text-red-700 font-semibold text-center">Search Box Cannot Be Empty!
+        </h1>
+        <h1 id="nothing-found" class="text-3xl text-red-600 font-semibold text-center">Nothing Was Found :(</h1>
+    </div>
+    <script src="js/cocktailDb-api.js"></script>
+</body>
+
+</html>
