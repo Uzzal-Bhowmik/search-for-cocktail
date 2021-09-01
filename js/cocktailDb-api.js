@@ -75,7 +75,7 @@ const displayDrinks = (drinksArray) => {
             const singleCard = document.createElement('div');
             singleCard.innerHTML = `
             <div class="bg-white border-2 border-purple-400 h-full">
-                <img src="${singleDrinkInfo.strDrinkThumb}" alt="" class="w-full h-48 sm:h-56 object-cover" />
+                <img src="${singleDrinkInfo.strDrinkThumb}" alt="" class="w-full h-48 sm:h-56 object-center" />
 
                 <div class="px-6 py-6 mb-4 text-center">
                     <div class="text-3xl font-bold text-purple-500 mb-8">${singleDrinkInfo.strDrink.slice(0, 19)}</div> 
